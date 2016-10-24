@@ -16,7 +16,8 @@ ratingInput(inputId, label, class="rating",
  dataFractions=1,
  disabled=FALSE,
  readonly=FALSE,
- value=NULL)
+ value=NULL,
+ includeBootstrapCSS=FALSE)
 }
 \arguments{
   \item{inputId}{Input variable to assign the control's value to}
@@ -31,6 +32,7 @@ ratingInput(inputId, label, class="rating",
   \item{disabled}{Set the control to disabled.}
   \item{readonly}{Flag whether to display the rating input control in read-only mode.}
   \item{value}{Initial Value. Defaults to NULL.}
+  \item{includeBootstrapCSS}{Whether or not to load the Bootstrap CSS (bootstrap.min.css)}
 }
 \details{
 The rating input control creates an input control over the range dataStart (not included) to dataStop (included) with step size dataStep. The default range is (0,...,5], that is a input control over the ratings [1, 2, 3, 4, 5]. The parameter dataFractions indicates the number of equal parts that users may select. dataFractions=3 will allow to select [1,1.33,1.66,2,2.33,2.66,3,...,5].

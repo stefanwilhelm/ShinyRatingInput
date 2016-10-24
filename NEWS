@@ -1,0 +1,4 @@
+ShinyRatingInput
+
+changes in ShinyRatingInput  1.1 (2016-10-24)
+# added switch to whether or not to include the Bootstrap CSS. When used with shinythemes, Bootstrap is loaded anyway.

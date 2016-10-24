@@ -15,7 +15,7 @@ ratingInput <- function(inputId, label, class="rating",
  dataFractions=1,
  disabled=FALSE,
  readonly=FALSE,
- value=NULL) {
+ value=NULL, includeBootstrapCSS=FALSE) {
 
  # For <input type="hidden">, no Shiny input binding exists, so users may need to write one on their own.
  # See discussion: https://groups.google.com/forum/#!topic/shiny-discuss/FU-aDoxKBNA
@@ -42,7 +42,7 @@ ratingInput <- function(inputId, label, class="rating",
      tags$script(src = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.js"),
      tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.css"),
      tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/font-awesome.min.css"),
-     tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/bootstrap.min.css")
+     ifelse (includeBootstrapCSS, tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/bootstrap.min.css"), HTML(""))
     )
    ),
    controlLabel,
