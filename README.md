@@ -21,7 +21,7 @@ shinyServer(function(input, output, session) {
 To install, install the `devtools` package if necessary (`install.packages("devtools")`) and run:
 
 ```
-devtools::install_github("ShinyRatingInput", "stefanwilhelm")
+devtools::install_github("stefanwilhelm/ShinyRatingInput")
 ```
 
 External Javascript libraries used in this package include:

@@ -1,4 +1,5 @@
 ShinyRatingInput
 
-changes in ShinyRatingInput  1.1 (2016-10-24)
+changes in ShinyRatingInput  1.1 (2017-01-08)
 # added switch to whether or not to include the Bootstrap CSS. When used with shinythemes, Bootstrap is loaded anyway.
+# fixed an issue to make ratingInput() work also inside renderUI().

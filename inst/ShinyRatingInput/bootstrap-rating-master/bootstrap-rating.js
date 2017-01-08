@@ -81,7 +81,7 @@
           if (!$input.prop('disabled') && !$input.prop('readonly')) {
             f.call(this, e);
           }
-        }
+        };
       };
 
       // Build the rating control.
@@ -151,7 +151,7 @@
     extendSymbol: function (rate) {},
   };
 
-  $(function () {
-    $('input.rating').rating();
-  });
+//  $(function () {
+//    $('input.rating').rating();
+//  });
 }(jQuery));

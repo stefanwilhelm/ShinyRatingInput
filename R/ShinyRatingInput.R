@@ -30,22 +30,29 @@ ratingInput <- function(inputId, label, class="rating",
       `data-stop`=dataStop,
       `data-step`=dataStep,
       `data-fractions`=dataFractions)
+ headTag <-     tags$head(
+   initResourcePaths(),  
+   tags$script(src = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.js"),
+   tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.css"),
+   tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/font-awesome.min.css")
+ )
+ 
 
  if (disabled) inputTag <- tagAppendAttributes(inputTag, `disabled`="disabled")
  if (readonly) inputTag <- tagAppendAttributes(inputTag, `readonly`="readonly")
  if (!is.null(value)) inputTag <- tagAppendAttributes(inputTag, `value`=value)
+ if(includeBootstrapCSS) {
+   headTag <- tagAppendChildren(headTag,
+                    tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/bootstrap.min.css")
+     )
+ }
 
  tagList(
    singleton(
-    tags$head(
-     initResourcePaths(),  
-     tags$script(src = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.js"),
-     tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/bootstrap-rating-master/bootstrap-rating.css"),
-     tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/font-awesome.min.css"),
-     ifelse (includeBootstrapCSS, tags$link(rel = "stylesheet", type = "text/css", href = "ShinyRatingInput/css/bootstrap.min.css"), HTML(""))
-    )
+     headTag
    ),
    controlLabel,
-   inputTag
+   inputTag,
+   tags$script(paste0("$('input.rating#",inputId,"').rating();"))
  )
 }
